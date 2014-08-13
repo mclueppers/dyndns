@@ -1,16 +1,15 @@
 #!/bin/bash
 #
-# dyndns 0.5.9
+# dyndns v0.6.0
 # 
 # This program is used to dynamicaly update BIND 
 # records from a list of IPs. The first to be
 # reachable via ICMP ping is set for the hostname
 #
-# Copyright (C) 2013 Martin Dobrev <martin.dobrev@unixsol.co.uk>
-# Company: UNIXSOL LTD
+# Copyright (C) 2013-2014 Martin Dobrev <martin@dobrev.eu>
 #
 #  This program is free software: you can redistribute it and/or modify
-#  it under the terms of the GNU General Public License as published by
+#  it under the terms of the Affero GNU General Public License as published by
 #  the Free Software Foundation, either version 3 of the License, or
 #  (at your option) any later version.
 #
@@ -25,7 +24,8 @@
 # Chanegelog
 # =========================================================
 #
-# v0.5.9 - Initial GNU GPL version
+# v0.6.0 - Dual License under AGPL and MIT
+# v0.5.9 - Initial Affero GNU GPL version
 #
 ##################################################################
 set +x
@@ -43,7 +43,7 @@ TTL=60
 # You're warned :)
 
 PROG=$(basename $0)
-VER="0.5.9"
+VER="v0.6.0"
 
 function check_alive {
   ping -c 1 -w 2 -W 1 -q $1 > /dev/null
@@ -208,7 +208,7 @@ OPTIONS:
 If primary IP is not available/reachable then the system will try to access the secondary one and update
 the DNS settings accordingly. Once Primary IP comes back up the system will switch back to it.
 
-For additional information and modifications contact Martin Dobrev (martin.dobrev@unixsol.co.uk)
+For additional information and modifications contact Martin Dobrev (martin@dobrev.eu)
 EOF
 }
 
